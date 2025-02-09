@@ -1,3 +1,4 @@
+package easy;
 /*
 You are given two strings s1 and s2 of equal length. A string swap is an operation where you choose two indices in a string (not necessarily different) and swap the characters at these indices.
 
@@ -27,16 +28,46 @@ Constraints:
 s1.length == s2.length
 s1 and s2 consist of only lowercase English letters.
 */ 
+import java.util.Arrays;
 
-
-lass Solution {
+class Solution {
     public boolean areAlmostEqual(String s1, String s2) {
-            for(int i = 0; i < s1.length(); i++) {
-            String s = Character.toString(s1.charAt(i));
-            if(!s2.contains(s)) {
+            if(s1.equals(s2)) {
+                return true;
+            }
+            
+            if(s1.length() != s2.length()) {
                 return false;
             }
+
+            ArrayList<String> sameLetters = new ArrayList<String>();
+
+            ArrayList<String> differentLetters1 = new ArrayList<String>();
+            ArrayList<String> differentLetters2 = new ArrayList<String>();
+
+            for(int i = 0; i < s1.length(); i++) {
+                if(s1.charAt(i) == s2.charAt(i)) {
+                    sameLetters.add(Character.toString(s1.charAt(i)));
+                } else {
+                    differentLetters1.add(Character.toString(s1.charAt(i)));
+                                System.out.println("s1 " + s1.charAt(i));
+                                System.out.println("s2 " + s2.charAt(i));
+
+                    differentLetters2.add(Character.toString(s2.charAt(i)));
+            }
+            }
+
+            if(differentLetters1.size() < 2) {
+                return false;
+            }
+
+        if(differentLetters1.get(0).equals(differentLetters2.get(1)) && differentLetters1.get(1).equals(differentLetters2.get(0)) && differentLetters1.size() == 2) 
+         {
+            System.out.println("bbooggogogoe");
+            return true;
+        } else {
+            return false;
         }
-        return true;
+
     }
 }
