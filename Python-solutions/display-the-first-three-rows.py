@@ -1,7 +1,5 @@
-"""2879. Display the First Three Rows
-Easy
-Companies
-Hint
+"""
+2879. Display the First Three Rows
 DataFrame: employees
 +-------------+--------+
 | Column Name | Type   |
